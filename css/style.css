@@ -545,6 +545,71 @@ section h2::after {
   box-shadow: 0 20px 45px rgba(31,106,255,0.25);
 }
 
+/* ================= CASE STUDY ================= */
+
+.case-study {
+  background: #ffffff;
+  text-align: center;
+}
+
+.case-intro {
+  max-width: 720px;
+  margin: 15px auto 50px;
+  font-size: 1.05rem;
+}
+
+.case-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #f8fafc
+  );
+  border-radius: 20px;
+  padding: 48px 44px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.case-content h3 {
+  font-size: 1.6rem;
+  margin-bottom: 28px;
+  color: var(--primary-dark);
+}
+
+.case-block {
+  margin-bottom: 22px;
+}
+
+.case-block h4 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+  color: var(--primary-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.case-block p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.case-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.case-tags span {
+  background: rgba(31,106,255,0.08);
+  color: var(--primary-dark);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
 /* ================= CTA ================= */
 .cta {
   background: linear-gradient(135deg, #020617, #0A1F44);
