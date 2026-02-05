@@ -184,3 +184,13 @@ footer {
     transform: translateY(0);
   }
 }
+
+ul {
+  max-width: 800px;
+  margin: 20px auto 0;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
