@@ -27,10 +27,10 @@
     <h1>Contact Us</h1>
     <p class="hero-sub">
       Let’s discuss your project and find the right solution.
-    </p>
-    <button class="btn-primary" id="openContact">
-      Free Consultation
+    <button class="btn-primary open-contact">
+      Talk to Us
     </button>
+
   </div>
 </header>
 
@@ -75,6 +75,15 @@
         We typically respond within 24 hours.
       </p>
 
+      <!-- Honeypot field (anti-spam) -->
+      <input
+        type="text"
+        name="company"
+        tabindex="-1"
+        autocomplete="off"
+        class="hp-field"
+      />
+
     </form>
   </div>
 
@@ -94,46 +103,60 @@
     emailjs.init("DJ40n0Ghe7hTL76XC");
   })();
 
-  /* ========== MODAL LOGIC ========== */
-  const openBtn = document.getElementById("openContact");
-  const closeBtn = document.getElementById("closeContact");
-  const modal = document.getElementById("contactModal");
+  /* ========== MODAL LOGIC (GLOBAL) ========== */
 
-  openBtn.addEventListener("click", () => {
+const modal = document.getElementById("contactModal");
+const closeBtn = document.getElementById("closeContact");
+
+// Open modal from ANY element with .open-contact
+document.querySelectorAll(".open-contact").forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
     modal.classList.add("active");
     modal.setAttribute("aria-hidden", "false");
   });
+});
 
-  closeBtn.addEventListener("click", () => {
+// Close modal
+closeBtn.addEventListener("click", () => {
+  modal.classList.remove("active");
+  modal.setAttribute("aria-hidden", "true");
+});
+
+// Close on overlay click
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
     modal.classList.remove("active");
-    modal.setAttribute("aria-hidden", "true");
-  });
+  }
+});
 
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.classList.remove("active");
-    }
-  });
 
   /* ========== FORM SUBMISSION ========== */
   document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    emailjs.sendForm(
-      "service_rmsjnuf",
-      "template_93u12dx",
-      this
-    ).then(
-      function () {
-        alert("Message sent successfully! We’ll be in touch shortly.");
-        modal.classList.remove("active");
-        e.target.reset();
-      },
-      function () {
-        alert("Something went wrong. Please try again or email us directly.");
-      }
-    );
-  });
+  // Honeypot check
+  if (this.company.value !== "") {
+    // Bot detected – silently fail
+    return;
+  }
+
+  emailjs.sendForm(
+    "service_rmsjnuf",
+    "template_93u12dx", // ← your real template ID
+    this
+  ).then(
+    function () {
+      alert("Message sent successfully! We’ll be in touch shortly.");
+      document.getElementById("contactModal").classList.remove("active");
+      e.target.reset();
+    },
+    function () {
+      alert("Something went wrong. Please try again or email us directly.");
+    }
+  );
+});
+
 </script>
 
 </body>
