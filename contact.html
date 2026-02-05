@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+
   <title>Contact | Torrential Technologies</title>
+
+  <meta name="description" content="Contact Torrential Technologies for a free consultation. Reach us by phone or send a secure message.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<nav>
+<nav class="navbar">
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="services.html">Services</a>
@@ -14,31 +21,118 @@
   <a href="contact.html">Contact</a>
 </nav>
 
-<section>
-  <h2>Free Consultation</h2>
-  <p>Call or send us a message.</p>
-  <p><strong>Phone: +233 20 349 8498</strong></p>
+<!-- CONTACT HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <h1>Contact Us</h1>
+    <p class="hero-sub">
+      Let’s discuss your project and find the right solution.
+    </p>
+    <button class="btn-primary" id="openContact">
+      Free Consultation
+    </button>
+  </div>
+</header>
 
-  <form id="contact-form">
-    <input type="text" name="name" placeholder="Your Name" required><br><br>
-    <input type="email" name="email" placeholder="Your Email" required><br><br>
-    <textarea name="message" placeholder="Your Message" required></textarea><br><br>
-    <button type="submit">Send Message</button>
-  </form>
+<!-- CONTACT INFO -->
+<section class="about-section">
+  <div class="container">
+    <h2>Get in Touch</h2>
+    <p>
+      Prefer a quick conversation? You can reach us directly by phone
+      or send us a message using the consultation form.
+    </p>
+
+    <p><strong>Phone:</strong> <a href="tel:+233203498498">+233 20 349 8498</a></p>
+    <p><strong>Email:</strong> <a href="mailto:info@torrentialtechnologies.com">info@torrentialtechnologies.com</a></p>
+  </div>
 </section>
+
+<!-- MODAL OVERLAY -->
+<div class="modal-overlay" id="contactModal" aria-hidden="true">
+
+  <div class="modal">
+    <button class="modal-close" id="closeContact" aria-label="Close form">&times;</button>
+
+    <h2>Free Consultation</h2>
+    <p>
+      Tell us about your project and we’ll get back to you promptly.
+    </p>
+
+    <form id="contact-form">
+
+      <input type="text" name="name" placeholder="Your Name" required>
+
+      <input type="email" name="email" placeholder="Your Email" required>
+
+      <textarea name="message" placeholder="Tell us about your project" required></textarea>
+
+      <button type="submit" class="btn-primary">
+        Send Message
+      </button>
+
+      <p class="form-note">
+        We typically respond within 24 hours.
+      </p>
+
+    </form>
+  </div>
+
+</div>
 
 <footer>
   © 2026 Torrential Technologies
 </footer>
 
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  emailjs.init("YOUR_PUBLIC_KEY");
+<!-- ================= SCRIPTS ================= -->
 
-  document.getElementById("contact-form").addEventListener("submit", function(e) {
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  /* ========== EMAILJS INIT ========== */
+  (function () {
+    emailjs.init("DJ40n0Ghe7hTL76XC");
+  })();
+
+  /* ========== MODAL LOGIC ========== */
+  const openBtn = document.getElementById("openContact");
+  const closeBtn = document.getElementById("closeContact");
+  const modal = document.getElementById("contactModal");
+
+  openBtn.addEventListener("click", () => {
+    modal.classList.add("active");
+    modal.setAttribute("aria-hidden", "false");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
+    modal.setAttribute("aria-hidden", "true");
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("active");
+    }
+  });
+
+  /* ========== FORM SUBMISSION ========== */
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
     e.preventDefault();
-    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this)
-      .then(() => alert("Message sent successfully!"));
+
+    emailjs.sendForm(
+      "service_rmsjnuf",
+      "YOUR_TEMPLATE_ID",
+      this
+    ).then(
+      function () {
+        alert("Message sent successfully! We’ll be in touch shortly.");
+        modal.classList.remove("active");
+        e.target.reset();
+      },
+      function () {
+        alert("Something went wrong. Please try again or email us directly.");
+      }
+    );
   });
 </script>
 
