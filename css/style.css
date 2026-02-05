@@ -338,6 +338,83 @@ section h2::after {
   line-height: 1.6;
 }
 
+/* ================= HOW WE WORK – SLIDING CARDS ================= */
+
+.process {
+  background: #ffffff;
+  overflow: hidden;
+  text-align: center;
+}
+
+.process-intro {
+  max-width: 700px;
+  margin: 15px auto 50px;
+}
+
+/* Track */
+.process-track {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Moving container */
+.process-cards {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: slideLeft 22s linear infinite;
+}
+
+/* Pause on hover */
+.process-track:hover .process-cards {
+  animation-play-state: paused;
+}
+
+/* Individual card */
+.process-card {
+  width: 300px;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border-radius: 16px;
+  padding: 28px 26px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(31,106,255,0.22);
+}
+
+.step-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(31,106,255,0.18);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.process-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  color: var(--primary-dark);
+}
+
+.process-card p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* Animation */
+@keyframes slideLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 /* ================= CTA ================= */
 .cta {
   background: linear-gradient(135deg, #020617, #0A1F44);
