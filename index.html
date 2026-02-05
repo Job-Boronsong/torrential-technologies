@@ -190,5 +190,102 @@
   © 2026 Torrential Technologies
 </footer>
 
+<!-- ================= CONTACT MODAL ================= -->
+
+<div class="modal-overlay" id="contactModal" aria-hidden="true">
+
+  <div class="modal">
+    <button class="modal-close" id="closeContact" aria-label="Close form">&times;</button>
+
+    <h2>Free Consultation</h2>
+    <p>
+      Tell us about your project and we’ll get back to you shortly.
+    </p>
+
+    <form id="contact-form">
+
+      <!-- Honeypot field -->
+      <input
+        type="text"
+        name="company"
+        tabindex="-1"
+        autocomplete="off"
+        class="hp-field"
+      />
+
+      <input type="text" name="name" placeholder="Your Name" required>
+
+      <input type="email" name="email" placeholder="Your Email" required>
+
+      <textarea name="message" placeholder="Tell us about your project" required></textarea>
+
+      <button type="submit" class="btn-primary">
+        Send Message
+      </button>
+
+      <p class="form-note">
+        We typically respond within 24 hours.
+      </p>
+
+    </form>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+  /* ========== EMAILJS INIT ========== */
+  (function () {
+    emailjs.init("DJ40n0Ghe7hTL76XC");
+  })();
+
+  /* ========== MODAL LOGIC (GLOBAL) ========== */
+  const modal = document.getElementById("contactModal");
+  const closeBtn = document.getElementById("closeContact");
+
+  document.querySelectorAll(".open-contact").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.classList.add("active");
+      modal.setAttribute("aria-hidden", "false");
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
+    modal.setAttribute("aria-hidden", "true");
+  });
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("active");
+    }
+  });
+
+  /* ========== FORM SUBMISSION WITH HONEYPOT ========== */
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Honeypot check
+    if (this.company.value !== "") return;
+
+    emailjs.sendForm(
+      "service_qbpqu7c",
+      "template_93u12dx", // <-- your real template ID
+      this
+    ).then(
+      function () {
+        alert("Message sent successfully! We’ll be in touch shortly.");
+        modal.classList.remove("active");
+        e.target.reset();
+      },
+      function () {
+        alert("Something went wrong. Please try again or email us directly.");
+      }
+    );
+  });
+</script>
+
 </body>
 </html>
