@@ -281,6 +281,63 @@ section h2::after {
   line-height: 1.6;
 }
 
+/* ================= HOW WE WORK ================= */
+
+.process {
+  background: #ffffff;
+  text-align: center;
+}
+
+.process-intro {
+  max-width: 700px;
+  margin: 15px auto 50px;
+  font-size: 1.05rem;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.process-step {
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #f8fafc
+  );
+  border-radius: 18px;
+  padding: 42px 32px;
+  position: relative;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+  transition: all 0.35s ease;
+  text-align: left;
+}
+
+.process-step:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 65px rgba(31,106,255,0.22);
+}
+
+.step-number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: rgba(31,106,255,0.15);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.process-step h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: var(--primary-dark);
+}
+
+.process-step p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
 /* ================= CTA ================= */
 .cta {
   background: linear-gradient(135deg, #020617, #0A1F44);
