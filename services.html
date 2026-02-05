@@ -2,13 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <title>Services | Torrential Technologies</title>
-  <meta name="description" content="Software development services including custom software, backend solutions, API integration, and ongoing support.">
+
+  <meta name="description" content="Professional software development services including custom software, backend systems, API integration, and long-term software support by Torrential Technologies.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<nav>
+<nav class="navbar" aria-label="Main navigation">
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
   <a href="services.html">Services</a>
@@ -16,75 +22,156 @@
   <a href="contact.html">Contact</a>
 </nav>
 
-<header>
-  <h1>Our Services</h1>
-  <p>Professional software development solutions tailored to your needs</p>
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <h1>Our Services</h1>
+    <p class="hero-sub">
+      Secure, scalable software solutions designed to support
+      real business operations and long-term growth.
+    </p>
+  </div>
 </header>
 
-<section>
-  <div class="services">
+<!-- INTRO -->
+<section class="about-section">
+  <div class="container">
+    <h2>How We Help Organizations</h2>
+    <p>
+      Torrential Technologies provides end-to-end software development services
+      focused on reliability, security, and scalability. We don’t just build
+      software — we design systems that solve real operational challenges.
+    </p>
+  </div>
+</section>
 
-    <div class="card">
-      <h3>Custom Software Development</h3>
-      <p>
-        We design and develop custom software solutions tailored to your business
-        processes, goals, and operational needs.
-      </p>
-      <ul>
-        <li>Business & institutional systems</li>
-        <li>Custom web applications</li>
-        <li>Process automation</li>
-      </ul>
-    </div>
+<!-- SERVICES GRID -->
+<section class="services-section">
+  <div class="container">
 
-    <div class="card">
-      <h3>Backend & Database Solutions</h3>
-      <p>
-        Secure, scalable backend systems and databases that power reliable applications
-        and ensure smooth data management.
-      </p>
-      <ul>
-        <li>Database design & optimization</li>
-        <li>Secure authentication systems</li>
-        <li>Scalable server architecture</li>
-      </ul>
-    </div>
+    <h2>Our Core Services</h2>
 
-    <div class="card">
-      <h3>API Integration</h3>
-      <p>
-        Seamless integration of third-party services and internal systems to enable
-        automation and efficient data exchange.
-      </p>
-      <ul>
-        <li>Payment gateway integration</li>
-        <li>SMS & email services</li>
-        <li>Third-party system connectivity</li>
-      </ul>
-    </div>
+    <div class="services-grid">
 
-    <div class="card">
-      <h3>Software Maintenance & Support</h3>
-      <p>
-        Ongoing system maintenance to ensure performance, security, and long-term
-        reliability.
-      </p>
-      <ul>
-        <li>Bug fixes & updates</li>
-        <li>Performance monitoring</li>
-        <li>Technical support</li>
-      </ul>
+      <!-- SERVICE 1 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 4h16v4H4V4zm0 6h16v10H4V10zm2 2v6h12v-6H6z"/>
+          </svg>
+        </div>
+        <h3>Custom Software Development</h3>
+        <p>
+          We design and develop custom software solutions tailored to your
+          organization's workflows, goals, and operational requirements.
+        </p>
+        <ul>
+          <li>Business & institutional systems</li>
+          <li>Custom web applications</li>
+          <li>Workflow & process automation</li>
+        </ul>
+      </div>
+
+      <!-- SERVICE 2 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2C7 2 3 3.8 3 6v12c0 2.2 4 4 9 4s9-1.8 9-4V6c0-2.2-4-4-9-4z"/>
+          </svg>
+        </div>
+        <h3>Backend & Database Solutions</h3>
+        <p>
+          Robust backend systems and databases that ensure data integrity,
+          performance, and scalability for growing platforms.
+        </p>
+        <ul>
+          <li>Database design & optimization</li>
+          <li>Secure authentication & authorization</li>
+          <li>Scalable backend architecture</li>
+        </ul>
+      </div>
+
+      <!-- SERVICE 3 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M10 3H5a2 2 0 00-2 2v5h2V5h5V3zm4 0v2h5v5h2V5a2 2 0 00-2-2h-5zm5 16h-5v2h5a2 2 0 002-2v-5h-2v5zM5 14H3v5a2 2 0 002 2h5v-2H5v-5z"/>
+          </svg>
+        </div>
+        <h3>API Integration</h3>
+        <p>
+          Seamless integration between systems and third-party services
+          to enable automation and efficient data exchange.
+        </p>
+        <ul>
+          <li>Payment gateway integration</li>
+          <li>SMS & email service integration</li>
+          <li>Third-party system connectivity</li>
+        </ul>
+      </div>
+
+      <!-- SERVICE 4 -->
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 1a11 11 0 00-11 11h3a8 8 0 1116 0h3A11 11 0 0012 1z"/>
+          </svg>
+        </div>
+        <h3>Software Maintenance & Support</h3>
+        <p>
+          Continuous maintenance and support to ensure long-term system
+          stability, security, and performance.
+        </p>
+        <ul>
+          <li>Bug fixes & system updates</li>
+          <li>Performance monitoring</li>
+          <li>Ongoing technical support</li>
+        </ul>
+      </div>
+
     </div>
 
   </div>
 </section>
 
-<section>
+<!-- DELIVERY -->
+<section class="about-section">
+  <div class="container">
+    <h2>How We Deliver Our Services</h2>
+    <p>
+      Every service we offer follows a structured delivery process that
+      prioritizes clarity, communication, and quality. From discovery to
+      deployment, we ensure each solution is built to last.
+    </p>
+    <p>
+      Our approach allows clients to stay informed, involved, and confident
+      throughout the development lifecycle.
+    </p>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="about-section">
+  <div class="container">
+    <h2>Who Our Services Are For</h2>
+    <p>
+      Our services are ideal for startups, SMEs, educational institutions,
+      non-profits, and organizations seeking dependable software solutions
+      tailored to their specific operations.
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
   <h2>Need a Custom Solution?</h2>
   <p>
-    Bundle available for larger projects. Contact us for a free consultation.
+    Whether you’re starting a new project or improving an existing system,
+    we’re ready to help you design the right solution.
   </p>
-  <p><strong>Call: +233 20 349 8498</strong></p>
+  <a href="contact.html" class="btn-primary">
+    Request a Free Consultation
+  </a>
 </section>
 
 <footer>

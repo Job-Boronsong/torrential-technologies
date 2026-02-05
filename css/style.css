@@ -933,3 +933,39 @@ li {
   max-width: 820px;
   font-size: 1.02rem;
 }
+
+/* ================= SERVICE ICONS ================= */
+
+.service-icon {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    rgba(31,106,255,0.15),
+    rgba(31,106,255,0.05)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: var(--primary-blue);
+}
+
+/* Hover effect */
+.service-card:hover .service-icon {
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue),
+    var(--accent-blue)
+  );
+}
+
+.service-card:hover .service-icon svg {
+  fill: #ffffff;
+}
