@@ -178,5 +178,17 @@
   });
 </script>
 
+<script>
+  const currentPage = location.pathname.split("/").pop() || "index.html";
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+      link.classList.add("active");
+    }
+  });
+</script>
+
 </body>
 </html>
