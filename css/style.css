@@ -1052,3 +1052,22 @@ li {
   width: 0;
   opacity: 0;
 }
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+.nav-links a {
+  margin-left: 20px;
+}
