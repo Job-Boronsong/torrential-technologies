@@ -85,6 +85,9 @@
       <a href="pricing.html">Pricing</a>
       <a href="contact.html">Contact</a>
     </div>
+    <button class="btn-primary open-contact">
+      Request Invoice
+    </button>
 
   </div>
 </nav>
@@ -424,6 +427,21 @@
       <input type="email" name="email" placeholder="Your Email" required>
 
       <textarea name="message" placeholder="Tell us about your project" required></textarea>
+      <select name="service" required>
+        <option value="">Service Type</option>
+        <option>Custom Software Development</option>
+        <option>Backend & Database Solutions</option>
+        <option>API Integration</option>
+        <option>Software Maintenance / Retainer</option>
+      </select>
+
+      <select name="budget">
+        <option value="">Estimated Budget (optional)</option>
+        <option>Under GHS 5,000</option>
+        <option>GHS 5,000 – 10,000</option>
+        <option>GHS 10,000 – 25,000</option>
+        <option>GHS 25,000+</option>
+      </select>
 
       <button type="submit" class="btn-primary">
         Send Message

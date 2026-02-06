@@ -1149,3 +1149,13 @@ li {
     padding: 30px 24px;
   }
 }
+
+.modal select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 16px;
+  font-family: inherit;
+  background: #ffffff;
+}
