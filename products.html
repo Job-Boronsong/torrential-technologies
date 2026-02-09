@@ -69,12 +69,12 @@
 
       <p><strong>Ideal for:</strong> Farms, cooperatives, agribusiness startups</p>
 
-      <button
-        class="btn-primary open-contact"
-        data-form="demo"
-        >
-        Request Demo
+        <button class="btn-primary open-contact" 
+            data-form="demo"
+            data-product="Agribusiness Management System">
+            Request Demo
         </button>
+
     </div>
 
     <!-- SCHOOL -->
@@ -96,11 +96,10 @@
 
       <p><strong>Ideal for:</strong> Schools, colleges, training institutions</p>
 
-       <button
-        class="btn-primary open-contact"
-        data-form="demo"
-        >
-        Request Demo
+       <button class="btn-primary open-contact" 
+            data-form="demo"
+            data-product="School Management System">
+            Request Demo
         </button>
     </div>
 
@@ -165,21 +164,17 @@
       <h2>Request a Demo</h2>
       <p>Tell us which product you’d like to explore.</p>
 
-      <!-- Honeypot -->
-      <input type="text" name="company" class="hp-field">
+      <!-- Auto-selected product -->
+      <input type="hidden" name="product" id="demoProduct">
 
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
 
-      <select name="product">
-        <option value="">Select Product (optional)</option>
-        <option>Agribusiness Management System</option>
-        <option>School Management System</option>
-      </select>
-
       <textarea name="message" placeholder="Tell us about your needs" required></textarea>
 
-      <button type="submit" class="btn-primary">Request Demo</button>
+      <button type="submit" class="btn-primary" id="demoSubmitBtn">
+        Request Demo
+      </button>
     </form>
 
     <!-- ================= INVOICE FORM ================= -->
@@ -188,19 +183,12 @@
       <h2>Request an Invoice</h2>
       <p>Provide details so we can prepare a quotation.</p>
 
-      <!-- Honeypot -->
-      <input type="text" name="company" class="hp-field">
+      <!-- Auto-selected product -->
+      <input type="hidden" name="product" id="invoiceProduct">
 
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <input type="text" name="organization" placeholder="Organization / Company" required>
-
-      <select name="product" required>
-        <option value="">Select Product</option>
-        <option>Agribusiness Management System</option>
-        <option>School Management System</option>
-        <option>Custom Software</option>
-      </select>
 
       <select name="budget">
         <option value="">Estimated Budget (optional)</option>
@@ -212,7 +200,9 @@
 
       <textarea name="message" placeholder="Additional requirements" required></textarea>
 
-      <button type="submit" class="btn-primary">Request Invoice</button>
+      <button type="submit" class="btn-primary" id="invoiceSubmitBtn">
+        Request Invoice
+      </button>
     </form>
 
   </div>
