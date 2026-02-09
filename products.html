@@ -69,7 +69,12 @@
 
       <p><strong>Ideal for:</strong> Farms, cooperatives, agribusiness startups</p>
 
-      <button class="btn-primary open-contact">Request Demo</button>
+      <button
+        class="btn-primary open-contact"
+        data-form="demo"
+        >
+        Request Demo
+        </button>
     </div>
 
     <!-- SCHOOL -->
@@ -91,7 +96,12 @@
 
       <p><strong>Ideal for:</strong> Schools, colleges, training institutions</p>
 
-      <button class="btn-primary open-contact">Request Demo</button>
+       <button
+        class="btn-primary open-contact"
+        data-form="demo"
+        >
+        Request Demo
+        </button>
     </div>
 
   </div>
@@ -130,9 +140,13 @@
   <p>
     Request a demo or invoice and let’s tailor the solution to your needs.
   </p>
-  <button class="btn-primary open-contact">
-    Request Demo / Invoice
-  </button>
+    <button
+        class="btn-primary open-contact"
+        data-form="invoice"
+        >
+        Request Invoice
+    </button>
+
 </section>
 
 <footer>
@@ -141,35 +155,51 @@
 
 <!-- ================= CONTACT MODAL ================= -->
 <div class="modal-overlay" id="contactModal" aria-hidden="true">
-
   <div class="modal">
+
     <button class="modal-close" id="closeContact" aria-label="Close form">&times;</button>
 
-    <h2>Request Demo / Invoice</h2>
-    <p>Tell us about your needs and we’ll respond shortly.</p>
+    <!-- ================= DEMO FORM ================= -->
+    <form id="demo-form" class="contact-form">
 
-    <form id="contact-form" novalidate>
+      <h2>Request a Demo</h2>
+      <p>Tell us which product you’d like to explore.</p>
 
       <!-- Honeypot -->
-      <input
-        type="text"
-        name="company"
-        tabindex="-1"
-        autocomplete="off"
-        class="hp-field"
-      >
+      <input type="text" name="company" class="hp-field">
 
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
 
-      <textarea name="message" placeholder="Tell us about your project" required></textarea>
+      <select name="product">
+        <option value="">Select Product (optional)</option>
+        <option>Agribusiness Management System</option>
+        <option>School Management System</option>
+      </select>
 
-      <select name="service">
-        <option value="">Service Type (optional)</option>
-        <option>Agribusiness System</option>
+      <textarea name="message" placeholder="Tell us about your needs" required></textarea>
+
+      <button type="submit" class="btn-primary">Request Demo</button>
+    </form>
+
+    <!-- ================= INVOICE FORM ================= -->
+    <form id="invoice-form" class="contact-form hidden">
+
+      <h2>Request an Invoice</h2>
+      <p>Provide details so we can prepare a quotation.</p>
+
+      <!-- Honeypot -->
+      <input type="text" name="company" class="hp-field">
+
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="organization" placeholder="Organization / Company" required>
+
+      <select name="product" required>
+        <option value="">Select Product</option>
+        <option>Agribusiness Management System</option>
         <option>School Management System</option>
         <option>Custom Software</option>
-        <option>Maintenance / Retainer</option>
       </select>
 
       <select name="budget">
@@ -180,13 +210,14 @@
         <option>GHS 25,000+</option>
       </select>
 
-      <button type="submit" class="btn-primary">Send Message</button>
+      <textarea name="message" placeholder="Additional requirements" required></textarea>
 
-      <p class="form-note">We typically respond within 24 hours.</p>
+      <button type="submit" class="btn-primary">Request Invoice</button>
     </form>
 
   </div>
 </div>
+
 
 <script src="js/main.js"></script>
 </body>
