@@ -1238,21 +1238,21 @@ li {
   }
 }
 
-/* ================= CEO SOCIALS ================= */
+/* ================= CEO SOCIAL ICONS ================= */
 
 .ceo-socials {
   display: flex;
   gap: 14px;
-  margin-top: 18px;
+  margin-top: 6px;
 }
 
 .ceo-socials a {
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: linear-gradient(
     135deg,
-    rgba(31,106,255,0.15),
+    rgba(31,106,255,0.12),
     rgba(31,106,255,0.05)
   );
   display: flex;
@@ -1261,23 +1261,34 @@ li {
   transition: all 0.3s ease;
 }
 
-.ceo-socials svg {
-  width: 30px;
-  height: 30px;
-  fill: var(--primary-blue);
-}
-
 .ceo-socials a:hover {
   background: linear-gradient(
     135deg,
     var(--primary-blue),
     var(--accent-blue)
   );
+  transform: translateY(-2px);
 }
 
+/* SVG icon sizing — THIS is the key */
+.ceo-socials svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--primary-blue);
+  display: block;
+  transform: scale(1.05);
+}
+
+/* Hover contrast */
 .ceo-socials a:hover svg {
   fill: #ffffff;
 }
+
+/* Centered under image */
+.ceo-socials.centered {
+  justify-content: center;
+}
+
 
 /* ================= CEO VIDEO ================= */
 
