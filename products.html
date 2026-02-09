@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Products | Torrential Technologies</title>
+
   <meta name="description" content="Explore Torrential Technologies products including agribusiness and school management systems designed for scalability and security.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 <nav class="navbar" aria-label="Main navigation">
   <div class="nav-inner">
 
@@ -31,7 +33,7 @@
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 <header class="hero">
   <div class="hero-content">
     <h1>Our Products</h1>
@@ -42,7 +44,7 @@
   </div>
 </header>
 
-<!-- PRODUCTS SECTION -->
+<!-- ================= PRODUCTS ================= -->
 <section class="services-section">
   <h2>Featured Solutions</h2>
 
@@ -52,84 +54,81 @@
     <div class="service-card">
       <div class="service-icon">🌾</div>
       <h3>Agribusiness Management System</h3>
+
       <p>
         A comprehensive platform designed to support farmers, cooperatives,
-        aggregators, and agribusiness operators manage operations efficiently.
+        aggregators, and agribusiness operators.
       </p>
 
       <ul>
         <li>Farmer & produce management</li>
         <li>Inventory & stock tracking</li>
         <li>Sales, orders & reporting</li>
-        <li>Data-driven insights & analytics</li>
+        <li>Data analytics & insights</li>
       </ul>
 
       <p><strong>Ideal for:</strong> Farms, cooperatives, agribusiness startups</p>
 
-      <button class="btn-primary open-contact">
-        Request Demo
-      </button>
+      <button class="btn-primary open-contact">Request Demo</button>
     </div>
 
-    <!-- SCHOOL MANAGEMENT -->
+    <!-- SCHOOL -->
     <div class="service-card">
       <div class="service-icon">🎓</div>
       <h3>School Management System</h3>
+
       <p>
-        A secure and scalable school management platform built to simplify
-        administration, communication, and academic operations.
+        A secure and scalable platform for managing academics,
+        administration, and communication.
       </p>
 
       <ul>
         <li>Student & staff management</li>
-        <li>Results, grading & reports</li>
+        <li>Results & grading</li>
         <li>Fees & payment tracking</li>
-        <li>Role-based access & security</li>
+        <li>Role-based access control</li>
       </ul>
 
       <p><strong>Ideal for:</strong> Schools, colleges, training institutions</p>
 
-      <button class="btn-primary open-contact">
-        Request Demo
-      </button>
+      <button class="btn-primary open-contact">Request Demo</button>
     </div>
 
   </div>
 </section>
 
-<!-- WHY OUR PRODUCTS -->
+<!-- ================= WHY ================= -->
 <section class="why-us">
   <h2>Why Our Products Stand Out</h2>
 
   <div class="why-grid">
     <div class="why-card">
       <h3>Security-First Design</h3>
-      <p>Built with strong authentication, access control, and data protection.</p>
+      <p>Authentication, access control, and data protection built-in.</p>
     </div>
 
     <div class="why-card">
       <h3>Customizable & Scalable</h3>
-      <p>Each solution can be adapted to your workflows and scaled as you grow.</p>
+      <p>Adapted to your workflows and grows with your organization.</p>
     </div>
 
     <div class="why-card">
       <h3>Local Context, Global Standards</h3>
-      <p>Designed for African businesses while following global best practices.</p>
+      <p>Designed for African operations using global best practices.</p>
     </div>
 
     <div class="why-card">
       <h3>Ongoing Support</h3>
-      <p>We provide continuous maintenance, updates, and technical support.</p>
+      <p>Continuous updates, maintenance, and technical support.</p>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
+<!-- ================= CTA ================= -->
 <section class="cta">
   <h2>Interested in Any of Our Products?</h2>
   <p>
-    Request a demo or invoice and let’s discuss how the solution
-    can be tailored to your organization.
+    Request a demo or invoice and let’s tailor the solution to your needs.
   </p>
   <button class="btn-primary open-contact">
     Request Demo / Invoice
@@ -140,30 +139,37 @@
   © 2026 Torrential Technologies
 </footer>
 
-<script src="js/main.js"></script>
+<!-- ================= CONTACT MODAL ================= -->
+<div class="modal-overlay" id="contactModal" aria-hidden="true">
 
-<form id="contact-form">
+  <div class="modal">
+    <button class="modal-close" id="closeContact" aria-label="Close form">&times;</button>
 
-      <!-- Honeypot field -->
+    <h2>Request Demo / Invoice</h2>
+    <p>Tell us about your needs and we’ll respond shortly.</p>
+
+    <form id="contact-form" novalidate>
+
+      <!-- Honeypot -->
       <input
         type="text"
         name="company"
         tabindex="-1"
         autocomplete="off"
         class="hp-field"
-      />
+      >
 
       <input type="text" name="name" placeholder="Your Name" required>
-
       <input type="email" name="email" placeholder="Your Email" required>
 
       <textarea name="message" placeholder="Tell us about your project" required></textarea>
-      <select name="service" required>
-        <option value="">Service Type</option>
-        <option>Custom Software Development</option>
-        <option>Backend & Database Solutions</option>
-        <option>API Integration</option>
-        <option>Software Maintenance / Retainer</option>
+
+      <select name="service">
+        <option value="">Service Type (optional)</option>
+        <option>Agribusiness System</option>
+        <option>School Management System</option>
+        <option>Custom Software</option>
+        <option>Maintenance / Retainer</option>
       </select>
 
       <select name="budget">
@@ -174,14 +180,14 @@
         <option>GHS 25,000+</option>
       </select>
 
-      <button type="submit" class="btn-primary">
-        Send Message
-      </button>
+      <button type="submit" class="btn-primary">Send Message</button>
 
-      <p class="form-note">
-        We typically respond within 24 hours.
-      </p>
-
+      <p class="form-note">We typically respond within 24 hours.</p>
     </form>
+
+  </div>
+</div>
+
+<script src="js/main.js"></script>
 </body>
 </html>
